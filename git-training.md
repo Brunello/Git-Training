@@ -245,7 +245,8 @@ the /sites directory):
    direct Git to not include the parent Directory, or via SourceTree taking care
    to rename the parent directory after previously deleting `/sites`.
 3. Create a new version of settings.php or edit the existing.
-4. Everything else (DB create/export/import, symlinks, truncate users table,
+4. Create new files directory or symlink to files directory.
+5. Everything else (DB create/export/import, symlinks, truncate users table,
    etc)
 
 ### Examples###
