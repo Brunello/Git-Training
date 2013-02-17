@@ -72,7 +72,7 @@
 
 **OS X**
 
-* [Download.dmg][http://git-scm.com/download/mac]
+* [Download.dmg](http://git-scm.com/download/mac)
 * Same as installing any other piece of software (double click .pkg file)
 
 **Linux**
