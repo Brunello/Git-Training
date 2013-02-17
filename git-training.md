@@ -236,3 +236,6 @@ support for copying to your clipboard. You have two choices:
 In most cases, you can run the above commands from the prod server to be 
 guarunteed that your repo starts off with the latest code from production.
 Then you can use SourceTree to clone a local copy for dev and.
+
+##Merging##
+
