@@ -68,7 +68,7 @@
 ###Git Client###
 
 > Good to know: Git won't add an icon to your dock, it's not that sort of
-> application - [https://help.github.com/articles/set-up-git][https://help.github.com/articles/set-up-git]
+> application - https://help.github.com/articles/set-up-git
 
 **OS X**
 
@@ -106,12 +106,12 @@
 
 ###Git GUI###
 
-I use [SourceTree][http://www.sourcetreeapp.com/]. Don't ask me "What about 
+I use [SourceTree](http://www.sourcetreeapp.com/). "What about 
 client X or client Y?". Use whatever you want. I use SourceTree.
 
-There are [plenty][http://stackoverflow.com/questions/315911/git-for-beginners-the-definitive-practical-guide/323559#323559] 
-of [lists][http://shiningthrough.co.uk/Mac-OS-X-Git-Clients-Roundup] 
-[comparing][http://www.techrepublic.com/blog/mac/choosing-the-right-git-gui-client-for-mac-os-x/1080] Git GUIs available.
+There are [plenty](http://stackoverflow.com/questions/315911/git-for-beginners-the-definitive-practical-guide/323559#323559) 
+of [lists](http://shiningthrough.co.uk/Mac-OS-X-Git-Clients-Roundup) 
+[comparing](http://www.techrepublic.com/blog/mac/choosing-the-right-git-gui-client-for-mac-os-x/1080) Git GUIs available.
 
 ##SSH Keys##
 
@@ -124,7 +124,7 @@ Git uses SSH key authentication by default.
 > In short, it's a way for a remote computer to validate the authenticity 
 > of a remote host. The result is exactly the same as entering a password.
 
-> **Further reading:** [Public Key Cryptography: Diffie-Hellman Key Exchange][http://www.youtube.com/watch?v=3QnD2c4Xovk]  
+> **Further reading:** [Public Key Cryptography: Diffie-Hellman Key Exchange](http://www.youtube.com/watch?v=3QnD2c4Xovk) 
 > The "common secret" is the RSA Fingerprint that you see when connecting to 
 > a host for the first time.
 
@@ -140,7 +140,7 @@ Git uses SSH key authentication by default.
 > account that will push to or pull from the repo. This includes the dev and 
 > production servers servers and any personal computer you might use.
 > 
-> Also note that in our [typical server setup][https://github.com/Brunello/server-configuration/blob/master/Add-Site.md], 
+> Also note that in our [typical server setup](https://github.com/Brunello/server-configuration/blob/master/Add-Site.md), 
 > each site hosted on a server has a unique user account. So each time you add
 > a site to a server, you'll need to generate keys for the account that owns 
 > that site.
@@ -195,7 +195,7 @@ support for copying to your clipboard. You have two choices:
     use a passphrase during creation, an attacker would not be able to read
     your key files without also gaining access to the passphrase.
 
-> **Further Reading:** [http://www.dribin.org/dave/blog/archives/2007/11/28/ssh_agent_leopard/][http://www.dribin.org/dave/blog/archives/2007/11/28/ssh_agent_leopard/]
+> **Further Reading:** [http://www.dribin.org/dave/blog/archives/2007/11/28/ssh_agent_leopard/](http://www.dribin.org/dave/blog/archives/2007/11/28/ssh_agent_leopard/)
 
 ##Cloning a repo##
 
