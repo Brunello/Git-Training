@@ -236,4 +236,7 @@ Then you can use SourceTree to clone a local copy for dev and.
 
 ##Merging##
 
-* Pull overwrites local changes. You must commit your changes first
+* Pull overwrites local Tracked Modified files. You must commit your changes 
+  first.
+* Once you commit, pulling will automatically merge (if possible) and add an
+  additional version to push.
