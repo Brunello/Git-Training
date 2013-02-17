@@ -1,6 +1,3 @@
-Date: 2013-2-16
-Title: Git Training
-
 ##What is Git?##
 
 ###Git vs Github vs Assembla vs ...###
