@@ -239,4 +239,14 @@ Then you can use SourceTree to clone a local copy for dev and.
 * Pull overwrites local Tracked Modified files. You must commit your changes 
   first.
 * Once you commit, pulling will automatically merge (if possible) and add an
-  additional version to push.
+  additional commit to push.
+
+###Fetch vs Pull###
+
+Simply put, a `git pull` runs a `git fetch` followed by a `git pull`.
+SourceTree periodically runs `git fetch` but don't rely on it. Before starting
+work on a working copy, it's always wise to run a `git fetch` first and `git
+pull` if neccessary.
+
+> In SourceTree, if a `git fetch` returns any changes, you will see a red
+> circle over the "Pull" icon with the number of commits that are available.
