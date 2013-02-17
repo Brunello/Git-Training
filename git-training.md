@@ -59,6 +59,7 @@
 
 ##Git vs SVN Commands##
 
+* `svn checkout [repo]` -> `git clone [repo] [optional destination]`
 * `svn update` -> `git pull`
 * `svn commit -m"message"` -> `git commit -m"message"`
 
@@ -76,14 +77,14 @@
 
 **Linux**
 
-* (Ubuntu/Debian) - `apt-get install git`
+* (Ubuntu/Debian) - `aptitude install git`
 * (Fedora/Cent/RHEL) - `yum install git`
 
 ###Configure Git###
 
 **Your Computer**
 * Set your username - this will be included in all commits
-    
+
     git config --global user.name "Your Name Here"
 
 > There are global and local Configuration Variables. You can override any 
