@@ -240,11 +240,13 @@ Drupal core there and rename it something like `adam.domain.com`. Then, to
 finish setting up the site files (Assuming the repo contains the contents of 
 the /sites directory):
 
-* Delete the default contents of the `/sites` directory.
-* Checkout the contents of the repo (either via command line using `.` to 
-  direct Git to not include the parent Directory, or via SourceTree taking care
-  to rename the parent directory after previously deleting `/sites`.
-* Create a new version of settings.php or edit the existing.
+1. Delete the default contents of the `/sites` directory.
+2. Checkout the contents of the repo (either via command line using `.` to 
+   direct Git to not include the parent Directory, or via SourceTree taking care
+   to rename the parent directory after previously deleting `/sites`.
+3. Create a new version of settings.php or edit the existing.
+4. Everything else (DB create/export/import, symlinks, truncate users table,
+   etc)
 
 ### Examples###
 
