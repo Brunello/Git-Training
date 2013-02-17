@@ -124,9 +124,9 @@ Git uses SSH key authentication by default.
 > In short, it's a way for a remote computer to validate the authenticity 
 > of a remote host. The result is exactly the same as entering a password.
 
-> **Further reading:** [Public Key Cryptography: Diffie-Hellman Key Exchange](http://www.youtube.com/watch?v=3QnD2c4Xovk) 
-> The "common secret" is the RSA Fingerprint that you see when connecting to 
-> a host for the first time.
+> **Further reading:** [Public Key Cryptography: Diffie-Hellman Key Exchange](http://www.youtube.com/watch?v=3QnD2c4Xovk)  
+> The server's public key is the RSA Fingerprint that you see when connecting
+> to a host for the first time.
 
 > Keys are stored in your user account directory in a hidden folder named 
 > `.ssh`. You'll also notice that this is where the `known_hosts` file is stored.
@@ -149,12 +149,16 @@ Git uses SSH key authentication by default.
 
 1. Generate the keys and save them in your .ssh folder.
 
+    ```
     $ cd ~/.ssh
     $ ssh-keygen -t rsa
+    ```
 
 2. Copy the keys to your clipboard
 
+    ```
     $ cat id_rsa.pub | pbcopy
+    ```
 
 3. Upload (paste) your key into the repo provider.
     * Assembla URL: https://www.assembla.com/user/edit/edit_git_settings
@@ -172,7 +176,9 @@ support for copying to your clipboard. You have two choices:
 
 * Install xclip (`sudo aptitude install xclip`) and run the following command:
 
+    ```
     $ xclip -sel clip < ~/.ssh/id_rsa.pub
+    ```
 
 * Connect to the server using a gui (such as Transmit), open the file in a
   plain-text editor and copy the contents from there.
@@ -220,6 +226,7 @@ support for copying to your clipboard. You have two choices:
 3. Commit all added files
 4. Push the commit
 
+    ```
     # Define the location of the repo
     $ git remote add origin https://github.com/Brunello/Git-Training.git
 
@@ -231,6 +238,7 @@ support for copying to your clipboard. You have two choices:
 
     # Push the files to the repo
     $ git push origin master
+    ```
 
 In most cases, you can run the above commands from the prod server to be 
 guarunteed that your repo starts off with the latest code from production.
