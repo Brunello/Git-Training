@@ -1,3 +1,5 @@
+#Brunello Git Training#
+
 ##What is Git?##
 
 ###Git vs Github vs Assembla vs ...###
@@ -204,6 +206,45 @@ support for copying to your clipboard. You have two choices:
 > **Further Reading:** [http://www.dribin.org/dave/blog/archives/2007/11/28/ssh_agent_leopard/](http://www.dribin.org/dave/blog/archives/2007/11/28/ssh_agent_leopard/)
 
 ##Cloning a repo##
+
+###Best Practices###
+
+* For Drupal, only store the contents of the `/sites` directory in the repo
+* Exclude (git ignore):
+    * settings.php
+    * files directory
+    * (settings.php can be included if this is a private repo)
+* See [SVN Instructions](http://192.168.15.42/code-snippets) for more information
+
+###Destination Path###
+
+**Apache Overview**
+
+* Apache listens (usually on port 80) for incoming http requests.
+* When a request is received, Apache notes what domain was used to make the
+  initial request and scans it's configuration files for a match. (Note that 
+  Apache can also serve different directories based on IP Address if the 
+  machine has more than one IP)
+* If a declaration is found (usually in the form of a vhost) Apache serves the
+  request from the corresponding directory found in the configuration file.
+* If no declaration is found, Apache serves it's default directory or, if no
+  default is defined, the first vhost alphbetically.
+
+**Directory**
+
+Based on our understanding of Apache, we can determine where to save the
+locally cloned working copy.
+
+On my computer, MAMP's root directory is ~/Sites/Local. So I usually untar
+Drupal core there and rename it something like `adam.domain.com`. Then, to
+finish setting up the site files (Assuming the repo contains the contents of 
+the /sites directory):
+
+* Delete the default contents of the `/sites` directory.
+* Checkout the contents of the repo (either via command line using `.` to 
+  direct Git to not include the parent Directory, or via SourceTree taking care
+  to rename the parent directory after previously deleting `/sites`.
+* Create a new version of settings.php or edit the existing.
 
 ### Examples###
 
