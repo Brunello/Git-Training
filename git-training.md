@@ -11,10 +11,11 @@
 
 ###Centralized vs Decentralized###
 
-* Committs, history, reverts don't require communicating with a centralized
+* Commits, history, reverts don't require communicating with a centralized
   server (note the difference between committing and pushing)
 * Built-in redundancy
-* Each working copy is effectively a fork
+* Each working copy is effectively a fork and a repository in it's own
+* Git data for a repo is all stored in one top-level directory
 * We have all been using SVN for years. If any of these features seem confusing 
   remember that you don't need to use all of them to use Git.
 
@@ -70,6 +71,10 @@
 * `svn update` -> `git pull`
 * `svn commit -m"message"` -> `git commit -m"message"`
 
+> Git ignore file is a plain-text file. You can use GUI to ignore files and
+> folders, you can edit the .gitignore file directly, or you can use the `rm`
+> command.
+
 ##Install and configure Git##
 
 ###Git Client###
@@ -95,7 +100,7 @@
     git config --global user.name "Your Name Here"
 
 > There are global and local Configuration Variables. You can override any 
-> global config var by ising `--local` instead of `--global` in the 
+> global config var by using `--local` instead of `--global` in the 
 > configuration declaration. You must run local config commands from within an
 > initialized git folder.
 
@@ -123,7 +128,7 @@ of [lists](http://shiningthrough.co.uk/Mac-OS-X-Git-Clients-Roundup)
 ##SSH Keys##
 
 SVN has support for SSH key authentication, but by default, it stores your
-username and password as plaintext - and we have used that method.
+username and password as plain-text - and we have used that method.
 
 Git uses SSH key authentication by default.
 
@@ -233,7 +238,7 @@ support for copying to your clipboard. You have two choices:
 * If a declaration is found (usually in the form of a vhost) Apache serves the
   request from the corresponding directory found in the configuration file.
 * If no declaration is found, Apache serves it's default directory or, if no
-  default is defined, the first vhost alphbetically.
+  default is defined, the first vhost alphabetically.
 
 **Directory**
 
@@ -290,7 +295,7 @@ the /sites directory):
     ```
 
 In most cases, you can run the above commands from the prod server to be 
-guarunteed that your repo starts off with the latest code from production.
+guaranteed that your repo starts off with the latest code from production.
 Then you can use SourceTree to clone a local copy for dev and.
 
 ##Adding Remote Repos##
@@ -307,6 +312,7 @@ working copy.
 3. Alice adds Bob's working copy as Remote Repo
 4. Bob makes a change and commits it, but does not push to Origin
 5. Alice runs `git pull --all`
+6. Alice now sees Bob's unpushed commit in her working copy
 
 ##Merging##
 
