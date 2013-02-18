@@ -37,27 +37,32 @@
 
 **Workflow Diagram**
     
-    ----------------------------------------------------------------            --------
-    |                   ------WORKING COPY------                   |            | REPO |
-    +----------- ------------ ------------ ------------ -----------+            |      |
-    | Ignored  | |Untracked | | Tracked  | | Tracked  | | Tracked  |            |      |
-    |          | |          | |Unmodified| | Modified | | Staged   |            |      |
-    |          | |          | |          | |          | |          |            |      |
-    |   <===ignore===<      | |          | |          | |          |            |      |
-    |          | |          | |          | |          | |          |            |      |
-    |          | |   >===============add===================>       |  >>PUSH>>  |      |
-    |          | |          | |          | |          | |          |            |      |
-    |          | |          | |    >====edit====>     | |          |  <<PULL<<  |      |
-    |          | |          | |          | |          | |          |            |      |
-    |          | |          | |          | |    >===add====>       |            |      |
-    |          | |          | |          | |          | |          |            |      |
-    |          | |          | |    <========commit=========<       |            |      |
-    |          | |          | |          | |          | |          |            |      |
-    |          | |    <=====rm=====<     | |          | |          |            |      |
-    |          | |          | |          | |          | |          |            |      |
-    ------------ ------------ ------------ ------------ ------------            --------
-
-
+    ----------------------------------------------------------------
+    |                   ------WORKING COPY------                   |
+    +----------- ------------ ------------ ------------ -----------+
+    | Ignored  | |Untracked | | Tracked  | | Tracked  | | Tracked  |
+    |          | |          | |Unmodified| | Modified | | Staged   |
+    |          | |          | |          | |          | |          |
+    |   <===ignore===<      | |          | |          | |          |
+    |          | |          | |          | |          | |          |
+    |          | |   >================add==================>       |
+    |          | |          | |          | |          | |          |
+    |          | |          | |    >====edit====>     | |          |
+    |          | |          | |          | |          | |          |
+    |          | |          | |          | |    >===add====>       |
+    |          | |          | |          | |          | |          |
+    |          | |          | |    <========commit=========<       |
+    |          | |          | |     \    | |          | |          |
+    |          | |    <=====rm=====< \   | |          | |          |
+    |          | |          | |       \  | |          | |          |
+    ------------ ------------ ---------\-- ------------ ------------
+                                  ^     \           __________
+                                  |      \          |        |
+                                  |       \->>PUSH>>| Remote | 
+                                  |                 |  repo  |
+                                  |                 |        |
+                                  ----------<<PULL<<|        |
+                                                    ----------
 
 ##Git vs SVN Commands##
 
@@ -94,7 +99,7 @@
 > configuration declaration. You must run local config commands from within an
 > initialized git folder.
 
-> You can view a list of all config values:
+* You can view a list of all config values:
 
     $ git config --list
 
@@ -288,6 +293,21 @@ In most cases, you can run the above commands from the prod server to be
 guarunteed that your repo starts off with the latest code from production.
 Then you can use SourceTree to clone a local copy for dev and.
 
+##Adding Remote Repos##
+
+It's possible for each distributed working copy to list other working copies as
+remote repos. Since Git is distributed and not centralized, even the origin 
+repo is technically a working copy and isn't any different than any other 
+working copy.
+
+**Workflow**
+
+1. Alice clones ProjectX from Origin
+2. Bob clones ProjectX from Origin
+3. Alice adds Bob's working copy as Remote Repo
+4. Bob makes a change and commits it, but does not push to Origin
+5. Alice runs `git pull --all`
+
 ##Merging##
 
 * Pull overwrites local Tracked Modified files. You must commit your changes 
@@ -301,6 +321,8 @@ Simply put, a `git pull` runs a `git fetch` followed by a `git pull`.
 SourceTree periodically runs `git fetch` but don't rely on it. Before starting
 work on a working copy, it's always wise to run a `git fetch` first and `git
 pull` if neccessary.
+
+`git pull` is comprised of `fetch + merge`.
 
 > In SourceTree, if a `git fetch` returns any changes, you will see a red
 > circle over the "Pull" icon with the number of commits that are available.
