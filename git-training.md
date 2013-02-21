@@ -224,7 +224,7 @@ support for copying to your clipboard. You have two choices:
     * settings.php
     * files directory
     * (settings.php can be included if this is a private repo)
-* See [SVN Instructions](http://192.168.15.42/code-snippets) for more information
+* See [SVN Instructions](http://192.168.15.42/code-snippets/node/47) for more information
 * Defaults to home directory
 
 ###Destination Path###
@@ -262,14 +262,28 @@ the /sites directory):
 
 ### Examples###
 
-**Folder**  
+**Folder**
 *publishcontent module (github)*
 
 **Folder Contents**  
 *Linkwell Sites folder (Assembla)*
 
+    ```
+    $ git clone [repo] .
+    # note the trailing '.'
+    ```
+
 **Command Line**  
 *Drupal Module*
+
+See the `Version Control` tab on any contrib module page on drupal.org for
+detailed (and very good) instructions.
+
+> Note that I found one piece of Drupal's documentation incomplete. In order
+> to create patches that contain new files, the patch needs to be created from
+> the `staged` files. So I create those types of patches by adding all of the 
+> changes first, then running the `diff` command with the `--cached` flag.
+**Further Reading:** [git diff staged changes](https://www.google.com/search?q=git+diff+staged+changes&aq=f&oq=git+diff+&aqs=chrome.0.59j57j5j0j61j60.5076&sourceid=chrome&ie=UTF-8)
 
 ##Add existing site/project to new repo##
 
