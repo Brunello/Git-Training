@@ -72,3 +72,4 @@
     1. Overview of Pull
     2. Fetch vs Pull
 
+9. Misc Advantages

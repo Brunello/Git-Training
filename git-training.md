@@ -208,10 +208,10 @@ support for copying to your clipboard. You have two choices:
 
 2. `Enter passphrase (empty for no passphrase)`  
     If an attacker were to gain control over your machine (or the machine on 
-    which you are generating the keys) they could easily read your rsa_pub file
-    and use that information as the start of an escalation attack. If you
-    use a passphrase during creation, an attacker would not be able to read
-    your key files without also gaining access to the passphrase.
+    which you are generating the keys) they could access your private key file 
+    and use it to decrypt data that is encrypted with your public key. If you 
+    enter a password here, the ssh agent will require that you also enter the 
+    passphrase before it will decode that data.    
 
 > **Further Reading:** [http://www.dribin.org/dave/blog/archives/2007/11/28/ssh_agent_leopard/](http://www.dribin.org/dave/blog/archives/2007/11/28/ssh_agent_leopard/)
 
@@ -225,6 +225,7 @@ support for copying to your clipboard. You have two choices:
     * files directory
     * (settings.php can be included if this is a private repo)
 * See [SVN Instructions](http://192.168.15.42/code-snippets) for more information
+* Defaults to home directory
 
 ###Destination Path###
 
@@ -332,3 +333,24 @@ pull` if neccessary.
 
 > In SourceTree, if a `git fetch` returns any changes, you will see a red
 > circle over the "Pull" icon with the number of commits that are available.
+
+##Misc Advantages##
+
+###Features Updates###
+
+**Features background**
+Features module allows you to store configuration in flat files; e.g. a view.
+
+The features admin page compares the configuration stored in the database with
+what is defined in the file system. If it finds a discrepancy, the feature is
+marked as overriden. From here, you can _Revert_ (move the configuration 
+defined in the files to the database) or _Recreate_ create new files to match
+the current db configuration.
+
+**Benefit**
+Since all repo info is stored in one, single, top level folder, you can delete
+entire folders from your repo and recreate them with different content without
+causing a conflict.
+
+The diff window also allows you to see exactly what has changed in the case of
+a features module.
