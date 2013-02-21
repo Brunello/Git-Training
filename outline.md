@@ -1,3 +1,6 @@
+Git Training Outline
+====================
+
 1. What is Git?
     1. Git, vs Github, vs Assembla vs...
     2. Centralized vs Decentralized
