@@ -329,6 +329,24 @@ working copy.
 5. Alice runs `git pull --all`
 6. Alice now sees Bob's unpushed commit in her working copy
 
+###What about using Dev or Prod as a remote repo?###
+This came up during training, and it's worth considering. What if we set up the
+remote dev and prod sites as Remote Repos from our local working copy? This 
+would certainly simplify deployments. When you were ready to deploy a change, 
+just click the `Push` button in SourceTree and make sure that the dev and/or 
+prod server is checked off as a destination!
+
+But:
+* We'd need to configure the dev/prod servers to listen for pushes (I'm really
+  not sure is that takes much configuration - it might be as simple as pointing
+  to git@[ipAddr]:path/to/repo.git - someone should investigate when they have
+  the time)
+* I think the built-in process of logging into the server and manually pulling
+  the files is a good process best-practice (Note: in the near future I'd like 
+  to set up a Jenkin's CB server to handle this, but that's out of scope). I 
+  imagine we would have many accidental and unnoticed until it was too late 
+  pushes to prod.
+
 ##Merging##
 
 * Pull overwrites local Tracked Modified files. You must commit your changes 
@@ -347,6 +365,25 @@ pull` if neccessary.
 
 > In SourceTree, if a `git fetch` returns any changes, you will see a red
 > circle over the "Pull" icon with the number of commits that are available.
+
+###How can you see what is being pulled from the SourceTree GUI###
+
+After a little research, the answer seems to be "why?"; which wasn't obvious
+to me:
+
+> For both Git and Mercurial though, remember that unlike SVN you can commit
+> your changes locally. So even if there's a conflict, you never lose anything
+> so long as you've committed already. So really, there's no need to do this 
+> 'remote pre check' like you would have to do in SVN. Typically you only do 
+> that in SVN becuase it won't let you commit your changes without updating 
+> first, potentially messing up your local uncommitted changes during the 
+> merge, so this kind of peeking was necessary. In Git and Mercurial, just 
+> commit your changes locally - they're preserved and aren't going to get 
+> messed up. Then pull, and resolve the conflicts - or if you don't want to 
+> yet, just leave them unmerged until you're ready. It's a different sort of 
+> concept.
+
+**Further Reading:** [How to see all the files that I need to update or conflict in Source Tree?](https://answers.atlassian.com/questions/37828/how-to-see-all-the-files-that-i-need-to-update-or-conflict-in-source-tree)
 
 ##Misc Advantages##
 
